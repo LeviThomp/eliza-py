@@ -51,9 +51,20 @@ jokesettingarray = ["joke", "jokes active", "joke setting", "jokes"]
 jokearray = [": What does a computer drink when it goes to a bar after a long day?", 
             ": Why did the powerpoint presentation cross the road?", 
             ": Where do you send bad disk drives?",
-            ": How does a robot buy a drink?"]
+            ": How does a robot buy a drink?",
+            ": How do robots eat salsa?",
+            ": How do you make a robot angry?",
+            ": Why did the robot go to the shoe store?",
+            ": How does a robot eat pizza?",
+            ": What do you call a robotic horse?"]
 
 punchlinearray = [": Screenshots!", 
                     ": Because it wanted to get to the other slide!", 
                     ": Boot camp!",
-                    ": With Cache!"]
+                    ": With cache!",
+                    ": With microchips!",
+                    ": By pushing all of its buttons!",
+                    ": To get re-booted!",
+                    ": One byte at a time!",
+                    ": A woahh-bot!"
+                    ]
