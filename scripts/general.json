@@ -92,7 +92,8 @@
             "happy",
             "elated",
             "glad",
-            "better"
+            "better",
+            "content"
         ],
         "sad":
         [
@@ -120,10 +121,12 @@
         "done",
         "quit",
         "exit",
+        "seeya",
         "bye.",
         "goodbye.",
         "done.",
         "quit.",
-        "exit."
+        "exit.",
+        "seeya."
     ]
 }

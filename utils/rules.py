@@ -1,4 +1,5 @@
 import re
+from utils import arrays
 
 def decompose(keyword, in_str, script):
     """Find matching decomposition rule for a given keyword and string, if possible.
@@ -59,8 +60,7 @@ def reassemble(components, reassembly_rule):
         Reassembled components.
 
     """
-
-    response = 'Eliza: '
+    response = arrays.displayNameSetting + ': '
 
     # Split reassembly rule into its components
     reassembly_rule = reassembly_rule.split() 
