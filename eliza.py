@@ -34,9 +34,6 @@ def main():
     # boolean for if the user is currently in the settings control loop
     settingsmode = False
 
-    #keyword for external resources triggered
-    resourcemode = False
-
     #Setting that the user can change to enable or disable the search tool and jokes
     searchsetting = "True"
     jokesetting = "True"
@@ -48,6 +45,7 @@ def main():
     random.seed(datetime.now().timestamp())
     greetingindex = random.randint(0,len(utils.arrays.greetingarray)-1)
 
+    # Waiting for the user to press a button or close the application
     while True:
         event, values = window.read()
         print('event:', event)
@@ -75,6 +73,7 @@ def main():
         # if a string contains any characters of the alphabet.
         # Source: https://stackoverflow.com/a/59301031
 
+        # Waiting for the user to press a button or close the application
         while True:
             event, values = window.read()
             print('event:', event)
@@ -115,6 +114,7 @@ def main():
                 # response = prepare_response(utils.arrays.displayNameSetting + ': Which setting would you like to change? (to exit, type "exit")')
                 while settingsmode == True:
 
+                    # Waiting for the user to press a button or close the application
                     while True:
                         event, values = window.read()
                         print('event:', event)
@@ -169,12 +169,13 @@ def main():
                 response = prepare_response(utils.arrays.displayNameSetting + ': Thank you for changing settings. Is there anything else you wanted to talk about?')
 
             # keywords to enter the google search control loop
-            elif "resource" in in_str_l or "info" in in_str_l or "search" in in_str_l and resource == False and searchsetting == "True":
+            elif "resource" in in_str_l or "info" in in_str_l or "search" in in_str_l and searchsetting == "True":
                 resource = True
                 response = prepare_response(utils.arrays.displayNameSetting + ': Would you like me to find additional resources to help you?')
                 window['-CSI-'].update(response)
                 while resource == True:
 
+                    # Waiting for the user to press a button or close the application
                     while True:
                         event, values = window.read()
                         print('event:', event)
@@ -224,6 +225,7 @@ def main():
                 window['-CSI-'].update(response)
                 while jokeactive == True:
 
+                    # Waiting for the user to press a button or close the application
                     while True:
                         event, values = window.read()
                         print('event:', event)
