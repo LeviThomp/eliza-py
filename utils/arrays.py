@@ -33,10 +33,10 @@ goodbyearray =      [": Goodbye.",
                     ": I look forward to talking with you again soon."]
 
 #different greeting reponses
-greetingarray =     [": Welcome.\nYou: ",
-                    ": Hi. How are you?\nYou: ",
-                    ": Greetings.\nYou: ",
-                    ": It's a beautiful day, isnt it?\nYou: "]
+greetingarray =     [": Welcome.",
+                    ": Hi. How are you?",
+                    ": Greetings.",
+                    ": It's a beautiful day, isnt it?"]
 
 #acceptable responses for name setting
 namesettingarray = ["name", "chat bot name", "bot name", "chatbotname", "chat botname", "chatbot name"]

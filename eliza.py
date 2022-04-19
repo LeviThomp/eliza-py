@@ -21,6 +21,7 @@ def main():
     general_script, script, memory_inputs, exit_inputs = setup(GENERAL_SCRIPT_PATH, SCRIPT_PATH)
 
     sg.theme('LightBlue 1')
+    sg.set_options(text_color="Black")
     layout = [[sg.Text('You: '), sg.Text(size=(50,1), key='-mytext-')],
           [sg.Text(''), sg.Text(size=(70,11), key='-CSI-')],
           [sg.Input(key='-myinput-', do_not_clear=False)],
@@ -55,7 +56,7 @@ def main():
             break
         if event == sg.WIN_CLOSED or event == 'Bye!':
             window.close()
-            in_str_1 = "seeya"
+            in_str_l = "seeya"
             done = "True"
             break
 
