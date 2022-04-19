@@ -9,9 +9,10 @@ class TestEliza(unittest.TestCase):
 
     # Testing that external files can change the name
     def testNameChange(self):
-        self.assertEquals("Eliza", arrays.displayNameSetting)
+        self.assertEqual("Eliza", arrays.displayNameSetting)
         arrays.displayNameSetting = "BillyBob"
-        self.assertEquals("BillyBob", arrays.displayNameSetting)
+        self.assertEqual("BillyBob", arrays.displayNameSetting)
+
 
 
 
