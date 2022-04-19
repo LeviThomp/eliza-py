@@ -105,7 +105,8 @@ def prepare_response(response):
 
     """
     response = clean_string(response)
-    response += "\nYou: "
+    response += "\n"
+    #response += "\nYou: "
     return response
 
 def clean_string(in_str):
