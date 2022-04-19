@@ -20,9 +20,6 @@ def main():
     memory_stack = []
     general_script, script, memory_inputs, exit_inputs = setup(GENERAL_SCRIPT_PATH, SCRIPT_PATH)
 
-    #keyword for external resources triggered
-    resource = False
-
     sg.theme('LightBlue 1')
     layout = [[sg.Text('You: '), sg.Text(size=(50,1), key='-mytext-')],
           [sg.Text(''), sg.Text(size=(70,11), key='-CSI-')],
@@ -31,32 +28,14 @@ def main():
 
     window = sg.Window('Eliza Application', layout, [100, 50])
 
-    '''while True:
-        event, values = window.read()
-        print('event:', event)
-        print('values:', values)
-    
-        if event == sg.WIN_CLOSED or event == 'Bye!':
-            break
-        
-        if event == 'Send message':
-            input_text = values['-myinput-']
-            guiresponse = "some response for " + input_text
-            #response = kernel.respond(input_text)
-            window['-mytext-'].update(input_text)
-            window['-CSI-'].update(guiresponse)
-
-    window.close()
-    '''
-
-
-
-
     # if true, search the next thing the user responds with
     searchactive = False
     
-    # default settings mode is false
+    # boolean for if the user is currently in the settings control loop
     settingsmode = False
+
+    #keyword for external resources triggered
+    resourcemode = False
 
     #Setting that the user can change to enable or disable the search tool and jokes
     searchsetting = "True"
@@ -86,7 +65,8 @@ def main():
         in_str = values['-myinput-']
         in_str_l = in_str.lower()
         print('in_str_l: ' + in_str_l)
-        window['-mytext-'].update(in_str_l)
+        if in_str_l != "":
+            window['-mytext-'].update(in_str_l)
 
 
     # Main execution loop
@@ -111,7 +91,8 @@ def main():
             in_str = values['-myinput-']
             in_str_l = in_str.lower()
             print('in_str_l: ' + in_str_l)
-            window['-mytext-'].update(in_str_l)
+            if in_str_l != "":
+                window['-mytext-'].update(in_str_l)
             
             # if not in_str_l.islower():
                 # response = prepare_response(utils.arrays.displayNameSetting + ': Please, use letters. I am human, after all.')
@@ -143,10 +124,14 @@ def main():
                             break
                         if event == sg.WIN_CLOSED or event == 'Bye!':
                             window.close()
+                            done = "True"
+                            in_str_l = "seeya"
+                            break
             
                     in_str = values['-myinput-']
                     print('in_str_l: ' + in_str_l)
-                    window['-mytext-'].update(in_str_l)
+                    if in_str_l != "":
+                        window['-mytext-'].update(in_str_l)
 
                     if namechange == True:
                         utils.arrays.displayNameSetting = in_str
@@ -199,11 +184,14 @@ def main():
                             break
                         if event == sg.WIN_CLOSED or event == 'Bye!':
                             window.close()
+                            done = "True"
+                            in_str_l = "seeya"
                             break
             
                     in_str_l = values['-myinput-']
                     print('in_str_l: ' + in_str_l)
-                    window['-mytext-'].update(in_str_l)
+                    if in_str_l != "":
+                        window['-mytext-'].update(in_str_l)
             
                     if searchactive == True:
                         # Eliza searches for whatever is in the input string and resets to a defaut state
@@ -245,11 +233,14 @@ def main():
                             break
                         if event == sg.WIN_CLOSED or event == 'Bye!':
                             window.close()
+                            done = "True"
+                            in_str_l = "seeya"
                             break
             
                     in_str_l = values['-myinput-']
                     print('in_str_l: ' + in_str_l)
-                    window['-mytext-'].update(in_str_l)
+                    if in_str_l != "":
+                        window['-mytext-'].update(in_str_l)
 
                     # if the user responds in some form of yes, start the joke
                     if in_str_l in utils.arrays.acceptarray:
@@ -270,9 +261,6 @@ def main():
             else:
                 response = generate_response(in_str_l, script, general_script['substitutions'], memory_stack, memory_inputs)
 
-            # Get next user input
-            # in_str = input(response)
-            # in_str_l = in_str.lower()
             window['-CSI-'].update(response)
 
     # randomizing Eliza's goodbye message
