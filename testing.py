@@ -4,7 +4,7 @@ from utils import arrays
 
 class TestEliza(unittest.TestCase):
 
-    def testcase():
+    def testcase(self):
         return(200)
 
     # Testing that external files can change the name
